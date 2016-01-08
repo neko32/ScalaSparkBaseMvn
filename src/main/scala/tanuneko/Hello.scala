@@ -8,10 +8,10 @@ import org.apache.spark.SparkContext
 object Hello {
   def main(args:Array[String]): Unit = {
     def sc = new SparkContext
-    val rdd = sc.textFile("/user/neko32/scala/study1/test.txt")
+    val rdd = sc.textFile("/user/neko32/spark/study1/test.txt")
     rdd.flatMap(_.split(","))
     .map((_, 1))
     .reduceByKey(_ + _)
-    .saveAsTextFile("/user/neko32/scala/study1/result.txt")
+    .saveAsTextFile("/user/neko32/spark/study1/result.txt")
   }
 }
