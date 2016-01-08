@@ -12,6 +12,6 @@ object Hello {
     rdd.flatMap(_.split(","))
     .map((_, 1))
     .reduceByKey(_ + _)
-    .saveAsTextFile("/user/neko32/spark/study1/result.txt")
+    .saveAsTextFile("/user/neko32/spark/study1/result")
   }
 }
